@@ -1,3 +1,14 @@
+# 最新更新：外观美化已发布（2026-11-12）
+
+正式站：https://vps-deals-promo-radar-3cx.pages.dev/ 。用户已确认深色主视觉方向。
+新增森林绿首屏、服务器机架CSS插画、浅绿主按钮、分组规格价格卡片、统一详情页/对比页和新版分享PNG。未引入前端依赖、外部字体或运行时推理。
+改版6文件经独立分支提交并由PR #1合并： https://github.com/yingdongpeng618-ship-it/vps-deals-promo-radar/pull/1 。合并0c9cdfba，Actions运行43114498096成功，Cloudflare Pages检查成功。
+实际检查：390手机、768平板、1440桌面无页面横向溢出；线上7卡片、7对比行；详情USD6.00和官方出口正常；canonical保持正确。本地verify.py通过13页7deal13sitemap，6项原有测试由Actions再次通过。
+证据：work/visual-refresh/browser-validation.json、deployment-validation.json、remote-source-check.json；desktop-live.jpg、mobile-live.jpg、mobile-plans-live.jpg。
+本次外观任务无遗留阻碍。历史Google富媒体测试临时失败等运营事项仍见下方记录，本轮未重新测试。
+
+---
+
 # VPS优惠站进度与使用
 
 更新时间：2026-11-12（北京时间）。状态：已上线，自动更新实跑通过；Google富媒体测试未取得结果。

@@ -1,21 +1,21 @@
 {
-  "fetched_at": "2026-11-11T16:51:27+00:00",
+  "fetched_at": "2026-11-11T22:46:11+00:00",
   "providers": [
     {
       "id": "digitalocean",
       "source_url": "https://www.digitalocean.com/pricing/droplets",
-      "checked_at": "2026-11-11T16:51:27+00:00",
+      "checked_at": "2026-11-11T22:46:11+00:00",
       "status": "ok",
       "robots_url": "https://www.digitalocean.com/robots.txt",
       "robots_sha256": "d146d8d0a5b3edacea7428716b502abab71ec0c0f466275940a63e418b044bdb",
-      "source_sha256": "7aab27351f4abf7e6bb2c9366cea52c63143e400a5dc5fbdb0cd88fe67e4cef3",
+      "source_sha256": "367af1dc587671a79d0d7fc28313d600a31e4298b68e1c37237d03a31a7317c9",
       "offer_count": 7,
       "message": "Official price table parsed"
     },
     {
       "id": "hetzner",
       "source_url": "https://www.hetzner.com/cloud/",
-      "checked_at": "2026-11-11T16:51:27+00:00",
+      "checked_at": "2026-11-11T22:46:11+00:00",
       "status": "unpriced",
       "robots_url": "https://www.hetzner.com/robots.txt",
       "robots_sha256": "7c0e0de0a0469552e7ae48283d0c6e9c072deb795619b25ce7b377d8be90c986",
@@ -26,7 +26,7 @@
     {
       "id": "ovhcloud",
       "source_url": "https://us.ovhcloud.com/vps/",
-      "checked_at": "2026-11-11T16:51:27+00:00",
+      "checked_at": "2026-11-11T22:46:11+00:00",
       "status": "unpriced",
       "robots_url": "https://us.ovhcloud.com/robots.txt",
       "robots_sha256": "8eb4a1812be892f9b776ec213a9854d94d41121874981e9832083aaedd4e8e4c",
@@ -45,7 +45,7 @@
       "period": "month",
       "offer_url": "https://www.digitalocean.com/pricing/droplets",
       "source_url": "https://www.digitalocean.com/pricing/droplets",
-      "fetched_at": "2026-11-11T16:51:27+00:00",
+      "fetched_at": "2026-11-11T22:46:11+00:00",
       "kind": "standard",
       "region": "US pricing; confirm availability at checkout",
       "specs": {
@@ -69,7 +69,7 @@
       "period": "month",
       "offer_url": "https://www.digitalocean.com/pricing/droplets",
       "source_url": "https://www.digitalocean.com/pricing/droplets",
-      "fetched_at": "2026-11-11T16:51:27+00:00",
+      "fetched_at": "2026-11-11T22:46:11+00:00",
       "kind": "standard",
       "region": "US pricing; confirm availability at checkout",
       "specs": {
@@ -93,7 +93,7 @@
       "period": "month",
       "offer_url": "https://www.digitalocean.com/pricing/droplets",
       "source_url": "https://www.digitalocean.com/pricing/droplets",
-      "fetched_at": "2026-11-11T16:51:27+00:00",
+      "fetched_at": "2026-11-11T22:46:11+00:00",
       "kind": "standard",
       "region": "US pricing; confirm availability at checkout",
       "specs": {
@@ -117,7 +117,7 @@
       "period": "month",
       "offer_url": "https://www.digitalocean.com/pricing/droplets",
       "source_url": "https://www.digitalocean.com/pricing/droplets",
-      "fetched_at": "2026-11-11T16:51:27+00:00",
+      "fetched_at": "2026-11-11T22:46:11+00:00",
       "kind": "standard",
       "region": "US pricing; confirm availability at checkout",
       "specs": {
@@ -141,7 +141,7 @@
       "period": "month",
       "offer_url": "https://www.digitalocean.com/pricing/droplets",
       "source_url": "https://www.digitalocean.com/pricing/droplets",
-      "fetched_at": "2026-11-11T16:51:27+00:00",
+      "fetched_at": "2026-11-11T22:46:11+00:00",
       "kind": "standard",
       "region": "US pricing; confirm availability at checkout",
       "specs": {
@@ -165,7 +165,7 @@
       "period": "month",
       "offer_url": "https://www.digitalocean.com/pricing/droplets",
       "source_url": "https://www.digitalocean.com/pricing/droplets",
-      "fetched_at": "2026-11-11T16:51:27+00:00",
+      "fetched_at": "2026-11-11T22:46:11+00:00",
       "kind": "standard",
       "region": "US pricing; confirm availability at checkout",
       "specs": {
@@ -189,7 +189,7 @@
       "period": "month",
       "offer_url": "https://www.digitalocean.com/pricing/droplets",
       "source_url": "https://www.digitalocean.com/pricing/droplets",
-      "fetched_at": "2026-11-11T16:51:27+00:00",
+      "fetched_at": "2026-11-11T22:46:11+00:00",
       "kind": "standard",
       "region": "US pricing; confirm availability at checkout",
       "specs": {

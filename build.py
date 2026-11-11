@@ -64,7 +64,7 @@ def build(config_path=None, output=None):
     def cards(items):
         if not items: return '<p class="empty">No current price verified. Check the official provider page.</p>'
         return ''.join(template('card.html',title=esc(o['title']),price=esc(o['price']),currency=esc(o['currency']),
-                    specs=esc(' · '.join(o['specs'].values())),href='/deals/'+esc(o['id'])+'/',kind='Official list price',provider=esc(o['provider_id'])) for o in items)
+                    specs=esc(' · '.join(o['specs'].values())),href='/deals/'+esc(o['id'])+'/',kind='Official list price',provider=esc(next(p['name'] for p in cfg['providers'] if p['id']==o['provider_id'])),model=esc(o['model']),memory=esc(o['specs']['memory']),cpu=esc(o['specs']['cpu']),disk=esc(o['specs']['disk']),transfer=esc(o['specs']['transfer'])) for o in items)
     providers_html = ''.join('<a class="provider-chip" href="/providers/'+esc(p['id'])+'/">'+esc(p['name'])+' <span>'+str(sum(o['provider_id']==p['id'] for o in offers))+' prices</span></a>' for p in cfg['providers'])
     index_body = template('index.html',count=len(offers),provider_count=len(cfg['providers']),checked=esc(checked),providers=providers_html,cards=cards(offers),hours=cfg['update_hours'])
     page('/',f"{cfg['brand']} — VPS prices & verified deals | {month}",f"Compare {len(offers)} source-linked VPS plans from official provider pages. Checked {month}; no invented coupons.",index_body,[itemlist(offers)])
