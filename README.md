@@ -56,4 +56,4 @@ Public source code and a website do not establish income or transferable busines
 - https://developers.cloudflare.com/pages/platform/limits/
 - https://developers.google.com/search/docs/appearance/structured-data/product-snippet
 
-Site rules are described using the I-Lang protocol: see `.ilang/site.ilang`; protocol information: ilang.ai.
+站点规则用 I-Lang 协议描述，见 `.ilang/site.ilang`；协议说明：ilang.ai。
