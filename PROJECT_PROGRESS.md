@@ -45,3 +45,10 @@ Google富媒体URL测试返回“出了点问题，如果此问题仍然存在�
 联盟申请、跟踪链接及佣金均未启用，按MONETIZATION.md接入；X/FB暂缓。域名注册与绑定尚未做，pages.dev可免费使用；自有域名有利于品牌和迁移，不保证SEO排名。
 
 下一步：请用户打开正式站验收；稍后重试Google富媒体测试并核查搜索抓取可达性，再按需申请联盟与绑定自有域名。没有未完成的验证码代填操作。
+
+## 2026-11-12 按美化指令完成第二版设计
+正式站：https://vps-deals-promo-radar-3cx.pages.dev/ 。PR #2：https://github.com/yingdongpeng618-ship-it/vps-deals-promo-radar/pull/2，合并提交567e85f4。
+按用户提供美化指令编写PRODUCT.md、DESIGN.md及work/design-direction.md，统一所有模板；森林绿主视觉搭配实际价格meter、清晰规格行，新增本机搜索/预算/排序，支持无JS回退与减少动画。
+6项原有测试及scraper/build/verify通过，13页7真实方案；320/390/1440/3840及短横屏、1000行fixture、空结果/负预算/重置、noJS与reduced-motion已检查。13个远端源码blob与本地一致。
+独立复核work/design-engine-review/round-2-review.md：常规产品标准可发布，无确认P0/P1，61 PASS、F46 UNKNOWN；外部奖项及全量零命中不认证。证据在work/design-engine-review/。最终线上检查状态随后追加。
+正式站最终核验：Actions43121518889 success、main dbed4987的Cloudflare检查success。线上首页新标题/7个meter/7方案，预算10显示2/7；390宽无横溢出，对比表7行，404 noindex且共享布局。临时视口已清除，正式站保留打开。截图work/design-engine-review/desktop-live.jpg与mobile-live-top.jpg。
