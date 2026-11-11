@@ -47,3 +47,5 @@ One 600ms transform-only readout entrance moves visible content 12px; nothing st
 
 ## Evidence and limitations
 Source facts come from the current official-source dataset. Product context and visual direction are authored or explicitly inferred in PRODUCT.md and work/design-direction.md. Review artifacts and screenshots belong in work/design-engine-review/. Rule results distinguish browser evidence, source inspection and unknowns. External award judging, real-device Core Web Vitals and untested browser/assistive-technology combinations cannot be certified by visual inspection. Existing Google Rich Results/crawler issues are not claimed resolved by this visual change.
+
+Mobile offer prices use 32px amounts, a separate 16px USD label, and an inline 16px /mo period; narrow layouts retain the same readable scale.
