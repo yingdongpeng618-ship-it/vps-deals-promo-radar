@@ -1,0 +1,208 @@
+{
+  "fetched_at": "2026-11-11T14:47:02+00:00",
+  "providers": [
+    {
+      "id": "digitalocean",
+      "source_url": "https://www.digitalocean.com/pricing/droplets",
+      "checked_at": "2026-11-11T14:47:02+00:00",
+      "status": "ok",
+      "robots_url": "https://www.digitalocean.com/robots.txt",
+      "robots_sha256": "d146d8d0a5b3edacea7428716b502abab71ec0c0f466275940a63e418b044bdb",
+      "source_sha256": "42fc34ed2e64655760e7282137b1031b7e2f1f713e822ed88f56d7b7ca93c47b",
+      "offer_count": 7,
+      "message": "Official price table parsed"
+    },
+    {
+      "id": "hetzner",
+      "source_url": "https://www.hetzner.com/cloud/",
+      "checked_at": "2026-11-11T14:47:02+00:00",
+      "status": "unpriced",
+      "robots_url": "https://www.hetzner.com/robots.txt",
+      "robots_sha256": "7c0e0de0a0469552e7ae48283d0c6e9c072deb795619b25ce7b377d8be90c986",
+      "source_sha256": "0cc86235cf9703a75c454dfe40409b75f79edcc1732d943af04560e211b11ebe",
+      "offer_count": 0,
+      "message": "No current price verified by the configured adapter; consult official source."
+    },
+    {
+      "id": "ovhcloud",
+      "source_url": "https://us.ovhcloud.com/vps/",
+      "checked_at": "2026-11-11T14:47:02+00:00",
+      "status": "unpriced",
+      "robots_url": "https://us.ovhcloud.com/robots.txt",
+      "robots_sha256": "8eb4a1812be892f9b776ec213a9854d94d41121874981e9832083aaedd4e8e4c",
+      "source_sha256": "ec1d9dbb9273ec1de3aebbb19a99900b88ce7605965e59877a8339bdc9353051",
+      "offer_count": 0,
+      "message": "No current price verified by the configured adapter; consult official source."
+    }
+  ],
+  "offers": [
+    {
+      "provider_id": "digitalocean",
+      "model": "s-1vcpu-512mb-10gb",
+      "title": "DigitalOcean Basic Regular Droplet (s-1vcpu-512mb-10gb)",
+      "price": "4.00",
+      "currency": "USD",
+      "period": "month",
+      "offer_url": "https://www.digitalocean.com/pricing/droplets",
+      "source_url": "https://www.digitalocean.com/pricing/droplets",
+      "fetched_at": "2026-11-11T14:47:02+00:00",
+      "kind": "standard",
+      "region": "US pricing; confirm availability at checkout",
+      "specs": {
+        "memory": "512 MiB",
+        "cpu": "1 vCPU",
+        "transfer": "500 GiB",
+        "disk": "10 GiB"
+      },
+      "evidence": {
+        "monthly_cell": "$4.00",
+        "model_url": "https://cloud.digitalocean.com/registrations/new?activation_redirect=%2Fdroplets%2Fnew%3Fsize%3Ds-1vcpu-512mb-10gb&redirect_url=%2Fdroplets%2Fnew%3Fsize%3Ds-1vcpu-512mb-10gb"
+      },
+      "id": "digitalocean-s-1vcpu-512mb-10gb"
+    },
+    {
+      "provider_id": "digitalocean",
+      "model": "s-1vcpu-1gb",
+      "title": "DigitalOcean Basic Regular Droplet (s-1vcpu-1gb)",
+      "price": "6.00",
+      "currency": "USD",
+      "period": "month",
+      "offer_url": "https://www.digitalocean.com/pricing/droplets",
+      "source_url": "https://www.digitalocean.com/pricing/droplets",
+      "fetched_at": "2026-11-11T14:47:02+00:00",
+      "kind": "standard",
+      "region": "US pricing; confirm availability at checkout",
+      "specs": {
+        "memory": "1 GiB",
+        "cpu": "1 vCPU",
+        "transfer": "1,000 GiB",
+        "disk": "25 GiB"
+      },
+      "evidence": {
+        "monthly_cell": "$6.00",
+        "model_url": "https://cloud.digitalocean.com/registrations/new?activation_redirect=%2Fdroplets%2Fnew%3Fsize%3Ds-1vcpu-1gb&redirect_url=%2Fdroplets%2Fnew%3Fsize%3Ds-1vcpu-1gb"
+      },
+      "id": "digitalocean-s-1vcpu-1gb"
+    },
+    {
+      "provider_id": "digitalocean",
+      "model": "s-1vcpu-2gb",
+      "title": "DigitalOcean Basic Regular Droplet (s-1vcpu-2gb)",
+      "price": "12.00",
+      "currency": "USD",
+      "period": "month",
+      "offer_url": "https://www.digitalocean.com/pricing/droplets",
+      "source_url": "https://www.digitalocean.com/pricing/droplets",
+      "fetched_at": "2026-11-11T14:47:02+00:00",
+      "kind": "standard",
+      "region": "US pricing; confirm availability at checkout",
+      "specs": {
+        "memory": "2 GiB",
+        "cpu": "1 vCPU",
+        "transfer": "2,000 GiB",
+        "disk": "50 GiB"
+      },
+      "evidence": {
+        "monthly_cell": "$12.00",
+        "model_url": "https://cloud.digitalocean.com/registrations/new?activation_redirect=%2Fdroplets%2Fnew%3Fsize%3Ds-1vcpu-2gb&redirect_url=%2Fdroplets%2Fnew%3Fsize%3Ds-1vcpu-2gb"
+      },
+      "id": "digitalocean-s-1vcpu-2gb"
+    },
+    {
+      "provider_id": "digitalocean",
+      "model": "s-2vcpu-2gb",
+      "title": "DigitalOcean Basic Regular Droplet (s-2vcpu-2gb)",
+      "price": "18.00",
+      "currency": "USD",
+      "period": "month",
+      "offer_url": "https://www.digitalocean.com/pricing/droplets",
+      "source_url": "https://www.digitalocean.com/pricing/droplets",
+      "fetched_at": "2026-11-11T14:47:02+00:00",
+      "kind": "standard",
+      "region": "US pricing; confirm availability at checkout",
+      "specs": {
+        "memory": "2 GiB",
+        "cpu": "2 vCPUs",
+        "transfer": "3,000 GiB",
+        "disk": "60 GiB"
+      },
+      "evidence": {
+        "monthly_cell": "$18.00",
+        "model_url": "https://cloud.digitalocean.com/registrations/new?activation_redirect=%2Fdroplets%2Fnew%3Fsize%3Ds-2vcpu-2gb&redirect_url=%2Fdroplets%2Fnew%3Fsize%3Ds-2vcpu-2gb"
+      },
+      "id": "digitalocean-s-2vcpu-2gb"
+    },
+    {
+      "provider_id": "digitalocean",
+      "model": "s-2vcpu-4gb",
+      "title": "DigitalOcean Basic Regular Droplet (s-2vcpu-4gb)",
+      "price": "24.00",
+      "currency": "USD",
+      "period": "month",
+      "offer_url": "https://www.digitalocean.com/pricing/droplets",
+      "source_url": "https://www.digitalocean.com/pricing/droplets",
+      "fetched_at": "2026-11-11T14:47:02+00:00",
+      "kind": "standard",
+      "region": "US pricing; confirm availability at checkout",
+      "specs": {
+        "memory": "4 GiB",
+        "cpu": "2 vCPUs",
+        "transfer": "4,000 GiB",
+        "disk": "80 GiB"
+      },
+      "evidence": {
+        "monthly_cell": "$24.00",
+        "model_url": "https://cloud.digitalocean.com/registrations/new?activation_redirect=%2Fdroplets%2Fnew%3Fsize%3Ds-2vcpu-4gb&redirect_url=%2Fdroplets%2Fnew%3Fsize%3Ds-2vcpu-4gb"
+      },
+      "id": "digitalocean-s-2vcpu-4gb"
+    },
+    {
+      "provider_id": "digitalocean",
+      "model": "s-4vcpu-8gb",
+      "title": "DigitalOcean Basic Regular Droplet (s-4vcpu-8gb)",
+      "price": "48.00",
+      "currency": "USD",
+      "period": "month",
+      "offer_url": "https://www.digitalocean.com/pricing/droplets",
+      "source_url": "https://www.digitalocean.com/pricing/droplets",
+      "fetched_at": "2026-11-11T14:47:02+00:00",
+      "kind": "standard",
+      "region": "US pricing; confirm availability at checkout",
+      "specs": {
+        "memory": "8 GiB",
+        "cpu": "4 vCPUs",
+        "transfer": "5,000 GiB",
+        "disk": "160 GiB"
+      },
+      "evidence": {
+        "monthly_cell": "$48.00",
+        "model_url": "https://cloud.digitalocean.com/registrations/new?activation_redirect=%2Fdroplets%2Fnew%3Fsize%3Ds-4vcpu-8gb&redirect_url=%2Fdroplets%2Fnew%3Fsize%3Ds-4vcpu-8gb"
+      },
+      "id": "digitalocean-s-4vcpu-8gb"
+    },
+    {
+      "provider_id": "digitalocean",
+      "model": "s-8vcpu-16gb",
+      "title": "DigitalOcean Basic Regular Droplet (s-8vcpu-16gb)",
+      "price": "96.00",
+      "currency": "USD",
+      "period": "month",
+      "offer_url": "https://www.digitalocean.com/pricing/droplets",
+      "source_url": "https://www.digitalocean.com/pricing/droplets",
+      "fetched_at": "2026-11-11T14:47:02+00:00",
+      "kind": "standard",
+      "region": "US pricing; confirm availability at checkout",
+      "specs": {
+        "memory": "16 GiB",
+        "cpu": "8 vCPUs",
+        "transfer": "6,000 GiB",
+        "disk": "320 GiB"
+      },
+      "evidence": {
+        "monthly_cell": "$96.00",
+        "model_url": "https://cloud.digitalocean.com/registrations/new?activation_redirect=%2Fdroplets%2Fnew%3Fsize%3Ds-8vcpu-16gb&redirect_url=%2Fdroplets%2Fnew%3Fsize%3Ds-8vcpu-16gb"
+      },
+      "id": "digitalocean-s-8vcpu-16gb"
+    }
+  ]
+}
