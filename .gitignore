@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+research/
+work/
+.env*
+site/
