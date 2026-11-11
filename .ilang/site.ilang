@@ -1,13 +1,13 @@
 ::ILANG
 [TYPE:config][PROJECT:vps-deals][LANG:zh]
-::STATE{@SITE, brand:vps-deals, niche:VPS hosting, domain:unassigned}
+::STATE{@SITE, brand:vps-deals, niche:VPS hosting, domain:vps-deals-promo-radar-3cx.pages.dev}
 ::MODULE{CONFIG|title:机器读取的站点配置}
 ::JSON_BEGIN
 {
   "brand": "vps-deals",
   "niche": "VPS hosting",
   "locale": "en-US",
-  "base_url": "",
+  "base_url": "https://vps-deals-promo-radar-3cx.pages.dev",
   "repository_url": "https://github.com/yingdongpeng618-ship-it/vps-deals-promo-radar",
   "update_hours": 6,
   "max_age_hours": 30,

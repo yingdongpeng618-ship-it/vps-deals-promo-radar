@@ -2,7 +2,7 @@
 
 Independent, official-source VPS price and promotion monitor for **en-US**. Default niche: VPS hosting. Default brand: vps-deals. Sources: DigitalOcean, Hetzner, OVHcloud.
 
-**Deployment:** pending Cloudflare Pages assignment. No live URL is claimed until externally verified.
+**Live site:** https://vps-deals-promo-radar-3cx.pages.dev — hosted on Cloudflare Pages with repository-triggered builds.
 
 ## Run
 
