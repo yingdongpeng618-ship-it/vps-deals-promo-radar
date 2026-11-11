@@ -1,0 +1,30 @@
+::ILANG
+[TYPE:config][PROJECT:vps-deals][LANG:zh]
+::STATE{@SITE, brand:vps-deals, niche:VPS hosting, domain:unassigned}
+::MODULE{CONFIG|title:机器读取的站点配置}
+::JSON_BEGIN
+{
+  "brand": "vps-deals",
+  "niche": "VPS hosting",
+  "locale": "en-US",
+  "base_url": "",
+  "repository_url": "https://github.com/yingdongpeng618-ship-it/vps-deals-promo-radar",
+  "update_hours": 6,
+  "max_age_hours": 30,
+  "fields": ["title", "price", "currency", "offer_url", "valid_until", "source_url", "fetched_at"],
+  "render": {"show_unpriced_providers": true, "currency": "USD", "show_expired": false},
+  "providers": [
+    {"id":"digitalocean", "name":"DigitalOcean", "homepage":"https://www.digitalocean.com/", "source":"https://www.digitalocean.com/pricing/droplets", "affiliate_url":"", "adapter":"monthly_table", "start":"Basic Droplets", "end":"CPU-Optimized Droplets", "plan_query":"size", "label":"Basic Regular Droplet", "currency":"USD", "period":"month", "region":"US pricing; confirm availability at checkout"},
+    {"id":"hetzner", "name":"Hetzner", "homepage":"https://www.hetzner.com/", "source":"https://www.hetzner.com/cloud/", "affiliate_url":"", "adapter":"monitor_only", "region":"Check region and currency on official page"},
+    {"id":"ovhcloud", "name":"OVHcloud", "homepage":"https://us.ovhcloud.com/", "source":"https://us.ovhcloud.com/vps/", "affiliate_url":"", "adapter":"monitor_only", "region":"United States"}
+  ]
+}
+::JSON_END
+::MODULE{PROVIDERS|title:上方providers为唯一厂商清单 修改即影响抓取和页面}
+::MODULE{FIELDS|title:字段}
+title price currency offer_url valid_until source_url fetched_at
+::MODULE{RENDER|title:只渲染当前配置厂商 当前抓取成功且未过期的真实方案}
+::RULE{缺价格或型号⇒不生成deal；无可验证方案的厂商页保留并说明原因}
+::RULE{普通售价标记standard；不推断折扣、截止日期、库存、地区或佣金}
+::RULE{每6小时请求一次；robots失败或禁止、HTTP错误、未知模板⇒不绕过且不发布旧价}
+::BOUNDARY{never:编优惠 编价格 编佣金 绕反爬 登录后抓取|scope:permanent}
