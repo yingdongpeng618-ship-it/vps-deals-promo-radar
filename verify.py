@@ -17,7 +17,7 @@ def verify():
     urls=[x.text for x in sitemap.findall('.//s:loc',ns)]
     if cfg['base_url']:
         assert len(urls)==len(pages),(len(urls),len(pages))
-        assert sum('/deals/' in u for u in urls)==len(offers)
+        assert sum('/plans/' in u for u in urls)==len(offers)
         assert all(u.startswith(cfg['base_url']+'/') for u in urls)
     for path in pages:
         s=path.read_text(encoding='utf-8'); rel=path.relative_to(root).as_posix(); route='/'+rel[:-10]

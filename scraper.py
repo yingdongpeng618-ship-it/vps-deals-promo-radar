@@ -57,16 +57,17 @@ def extract(html, p, now):
         # Actual provider machine identifier is in the official purchase URL.
         decoded = unquote(unquote(link))
         model = re.search(r'(?:[?&])' + re.escape(p['plan_query']) + r'=([a-z0-9-]+)', decoded)
-        if not price or not model or not all((memory,cpu,disk)): continue
+        if not price or not re.fullmatch(r'\$\d+\.\d+',hourly) or not model or not all((memory,cpu,disk)): continue
         model = model.group(1)
         title = p['name'] + ' ' + p['label'] + ' (' + model + ')'
         offer = {'provider_id':p['id'], 'model':model, 'title':title,
-                 'price':price.group(1), 'currency':p['currency'], 'period':p['period'],
+                 'price':price.group(1), 'hourly_price':hourly.removeprefix('$'), 'currency':p['currency'], 'period':p['period'],
                  'offer_url':p['source'], 'source_url':p['source'], 'fetched_at':now,
                  'kind':'standard', 'region':p['region'],
                  'specs':{'memory':memory,'cpu':cpu,'transfer':transfer,'disk':disk},
                  'evidence':{'monthly_cell':monthly,'model_url':link}}
         offer['id'] = p['id'] + '-' + model
+        if p.get('billing'): offer['billing'] = p['billing']
         offers.append(offer)
     return list({(o['provider_id'],o['model'],o['currency']):o for o in offers}.values())
 
