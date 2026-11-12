@@ -126,6 +126,8 @@ def build(config_path=None, output=None):
     entries = ''.join('<url><loc>'+xml_escape(url(path))+'</loc><lastmod>'+xml_escape(date)+'</lastmod></url>' for path,date in pages) if base else ''
     (out/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+entries+'</urlset>',encoding='utf-8')
     (out/'_headers').write_text('/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: DENY\n  Content-Security-Policy: default-src \'self\'; script-src \'self\' \'unsafe-inline\'; style-src \'self\'; img-src \'self\' data:; frame-ancestors \'none\'\n',encoding='utf-8')
+    from magazine_preview import apply_preview
+    apply_preview(out,cfg,data,offers)
     summary = {'pages':len(pages),'deals':len(offers),'providers':len(cfg['providers']),'base_url':base,'data_fetched_at':checked}
     (ROOT/'data/build-report.json').write_text(json.dumps(summary,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(summary)); return summary
