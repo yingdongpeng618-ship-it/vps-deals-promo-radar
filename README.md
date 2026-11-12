@@ -1,8 +1,8 @@
-# vps-deals / RADAR
+# VPS Cost Lens
 
-Independent, official-source VPS price and promotion monitor for **en-US**. Default niche: VPS hosting. Default brand: vps-deals. Sources: DigitalOcean, Hetzner, OVHcloud.
+Independent, official-source VPS price index for **en-US**. Default niche: VPS hosting. Brand: VPS Cost Lens. Published source: DigitalOcean. Unpriced sources are removed from navigation, provider pages and sitemap.
 
-**Live site:** https://vps-deals-promo-radar-3cx.pages.dev — hosted on Cloudflare Pages with repository-triggered builds.
+**Target domain (registration/DNS verification pending):** https://vpscostlens.com — hosted on Cloudflare Pages with repository-triggered builds.
 
 ## Run
 
@@ -22,7 +22,7 @@ Open http://localhost:4190. Unassigned `base_url` builds are noindex and contain
 
 `.ilang/site.ilang` is the only source for brand, base URL, provider list, adapters, fields and rendering policy. The `::JSON_BEGIN` / `::JSON_END` block is a strict JSON payload inside the human-readable I-Lang document; `config.py` validates it. Both scraper and builder read it. Remove a provider there, run scraper + build, and its provider and deal pages disappear. The test suite actually exercises this.
 
-DigitalOcean's adapter reads the first six-column Basic Regular pricing table and its actual purchase-URL plan identifiers. It takes only the unambiguous monthly cell, never hourly numbers, credits, original prices or renewal prices. Other providers currently use `monitor_only`: their public pages are monitored but prices are not guessed. Add a reviewed deterministic adapter before publishing their prices. Feed/sitemap discovery is not implemented in v1; v1 uses official pricing pages.
+DigitalOcean's adapter reads the first six-column Basic Regular pricing table and its actual purchase-URL plan identifiers. It takes only the unambiguous monthly cell, never hourly numbers, credits, original prices or renewal prices. Sources without a reviewed price adapter are not published. Only providers with current verified offers generate a page or homepage entry. Feed/sitemap discovery is not implemented in v1; v1 uses official pricing pages.
 
 Every record includes the official source, UTC check timestamp, source SHA-256, plan ID and the exact observed monthly cell. `data/offers.json` is public, including fetch statuses. The bot checks robots.txt before fetching. HTTP 404 robots is treated as no restrictions; network/403/5xx robots errors fail closed. No certificate bypass, login scraping or anti-bot evasion.
 
@@ -34,11 +34,11 @@ Cloudflare Pages: connect this **public** repository, production branch `main`, 
 
 After Pages creates a project, copy its **returned actual production URL** into `base_url` and `@SITE domain` in `.ilang/site.ilang`, then rebuild and commit. Never guess the hostname from the project name. Verify canonical links, robots and every sitemap URL externally. The builder deliberately refuses to invent a production hostname.
 
-The latest observations are built into static pages. Failed sources have no current priced plans. Entries over 30 hours old and expired entries are omitted at build time. If the scheduler or deployment stops, an already-published static page cannot expire itself: check the visible timestamp and provider checkout. Monitor Actions failures. Public repository schedules may be disabled after 60 days without repository activity; automation is not guaranteed to run forever.
+The latest observations are built into static pages. Failed sources have no current priced plans or provider pages. Entries over 30 hours old and expired entries are omitted at build time. If the scheduler or deployment stops, an already-published static page cannot expire itself: check the visible timestamp and provider checkout. Monitor Actions failures. Public repository schedules may be disabled after 60 days without repository activity; automation is not guaranteed to run forever.
 
 ## Structured data
 
-Deal pages: Product + Offer + BreadcrumbList. Provider pages: Service with AggregateOffer when prices exist. Home/compare: ItemList. Only observed price/currency fields are emitted. No invented availability, discount, reviews or priceValidUntil. No FAQ block is published, so there is no FAQPage markup. Canonical and sitemap generation use the assigned actual base URL. Local JSON syntax, internal links and sitemap counts are validated by `verify.py`; that is **not** Google's Rich Results Test. Google may require/recommend further fields and does not guarantee rich results. A live Google test must be recorded separately.
+Deal pages: Product + Offer + BreadcrumbList. Provider pages: Service with AggregateOffer when prices exist. Home/compare: ItemList. Only observed price/currency fields are emitted. OnlineOnly describes the official online purchase channel, not regional stock. No invented stock, discounts, reviews or priceValidUntil. Each plan has an authored specification image and three explicitly hypothetical cost calculations. No FAQ block is published, so there is no FAQPage markup. Canonical and sitemap generation use the assigned actual base URL. Local JSON syntax, internal links and sitemap counts are validated by `verify.py`; that is **not** Google's Rich Results Test. Google may require/recommend further fields and does not guarantee rich results. A live Google test must be recorded separately.
 
 ## Monetization
 
@@ -49,8 +49,6 @@ Public source code and a website do not establish income or transferable busines
 ## Sources and operating limits
 
 - https://www.digitalocean.com/pricing/droplets
-- https://www.hetzner.com/cloud/
-- https://us.ovhcloud.com/vps/
 - https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule
 - https://docs.github.com/en/billing/concepts/product-billing/github-actions
 - https://developers.cloudflare.com/pages/platform/limits/

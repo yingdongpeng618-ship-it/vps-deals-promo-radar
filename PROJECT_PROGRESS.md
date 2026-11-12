@@ -52,3 +52,9 @@ Google富媒体URL测试返回“出了点问题，如果此问题仍然存在�
 6项原有测试及scraper/build/verify通过，13页7真实方案；320/390/1440/3840及短横屏、1000行fixture、空结果/负预算/重置、noJS与reduced-motion已检查。13个远端源码blob与本地一致。
 独立复核work/design-engine-review/round-2-review.md：常规产品标准可发布，无确认P0/P1，61 PASS、F46 UNKNOWN；外部奖项及全量零命中不认证。证据在work/design-engine-review/。最终线上检查状态随后追加。
 正式站最终核验：Actions43121518889 success、main dbed4987的Cloudflare检查success。线上首页新标题/7个meter/7方案，预算10显示2/7；390宽无横溢出，对比表7行，404 noindex且共享布局。临时视口已清除，正式站保留打开。截图work/design-engine-review/desktop-live.jpg与mobile-live-top.jpg。
+
+## 2026-11-12 四项整改（等待用户付款）
+用户已选B价格索引站与vpscostlens.com。Cloudflare Checkout 1年11.17美元小计，付款、短信/邮箱码、域名所有权确认交用户；尚未注册成功、未配置DNS/SSL、未切换线上。
+本地已完成：仅保留DO7个真价；失败源不再生成厂商页/首页入口/sitemap；VPS Cost Lens文案与/plans/路径；7方案各三项可复算成本情景和官方出处；补真实规格SVG与Product image；Offer availability OnlineOnly说明线上渠道而非库存。8测试及11页7方案验证通过。
+当前配置目标https://vpscostlens.com，生成HTML无pages.dev。代码尚未发布，线上仍旧版，富媒体新版复测尚未完成。Google旧页默认移动测试确认唯一严重项image缺失；不是没有结构化数据。
+精确接续：work/four-fixes/PROGRESS.md。勿因本地配置已有新域名而误报已上线。

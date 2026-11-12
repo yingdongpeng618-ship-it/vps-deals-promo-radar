@@ -5,11 +5,13 @@ import copy
 import json
 import tempfile
 import unittest
+import shutil
+from unittest.mock import patch
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from config import ROOT, load_config
 from scraper import extract
-from build import fresh_offers, build
+from build import fresh_offers, build, cost_analysis
 
 NOW=datetime.now(timezone.utc).isoformat()
 TABLE='''Basic Droplets<table><tr><th>Memory</th><th>vCPU</th><th>Transfer</th><th>SSD</th><th>$/hr</th><th>$/mo</th></tr><tr><td>1 GiB</td><td>1 vCPU</td><td>1,000 GiB</td><td>25 GiB</td><td>$0.00893</td><td><a href="https://cloud.digitalocean.com/new?size=s-1vcpu-1gb">$6.00</a></td></tr></table>'''
@@ -28,6 +30,23 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(extract(TABLE.replace('size=','wrong='),self.p,NOW),[])
     def test_unknown_table_fails_closed(self):
         with self.assertRaises(ValueError):extract(TABLE.replace('$/mo','Renewal'),self.p,NOW)
+    def test_cost_scenarios_use_hourly_rate_and_monthly_base(self):
+        row=extract(TABLE,self.p,NOW)[0];row['billing']={'reviewed_at':NOW}
+        result=cost_analysis(row)
+        for amount in ['7.20/month','7.80/month','USD 7.00','approximately USD 0.21']:
+            self.assertIn(amount,result)
+        self.assertIn('team-level excess',result)
+    def test_failed_provider_has_no_page_link_or_sitemap_entry(self):
+        data=json.loads((ROOT/'data/offers.json').read_text(encoding='utf-8'))
+        for provider in data['providers']: provider['status']='error'
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td);(root/'data').mkdir()
+            (root/'data/offers.json').write_text(json.dumps(data),encoding='utf-8')
+            for folder in ['templates','assets']:shutil.copytree(ROOT/folder,root/folder)
+            with patch('build.ROOT',root):build(ROOT/'.ilang/site.ilang',root/'site')
+            self.assertFalse((root/'site/providers').exists())
+            self.assertNotIn('/providers/',(root/'site/index.html').read_text(encoding='utf-8'))
+            self.assertNotIn('/providers/',(root/'site/sitemap.xml').read_text(encoding='utf-8'))
     def test_failure_stale_expiry_removed_and_deduped(self):
         row=extract(TABLE,self.p,NOW)[0]; data={'providers':[{'id':self.p['id'],'status':'ok'}],'offers':[row,row]}
         cfg=copy.deepcopy(self.cfg);cfg['providers']=[self.p]
