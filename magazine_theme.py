@@ -5,10 +5,15 @@ from html import escape
 import json
 import os
 import re
+from string import Template
 
 
 def apply_theme(output, cfg, data, offers):
     root = Path(output)
+    measurement_id = cfg.get('analytics', {}).get('measurement_id', '')
+    if measurement_id and not re.fullmatch(r'G-[A-Z0-9]+', measurement_id):
+        raise ValueError('Invalid GA4 measurement ID')
+    analytics = Template((Path(__file__).parent/'templates/analytics.html').read_text(encoding='utf-8')).substitute(measurement_id=measurement_id) if measurement_id else ''
     (root/'assets/magazine.css').write_text(STYLES, encoding='utf-8')
     (root/'assets/magazine.js').write_text(SCRIPT, encoding='utf-8')
     original_home=(root/'index.html').read_text(encoding='utf-8')
@@ -17,7 +22,7 @@ def apply_theme(output, cfg, data, offers):
         h=re.search(r'<head>(.*?)</head>',original,re.S).group(1)
         h=re.sub(r'<link rel="stylesheet"[^>]*>', '<link rel="stylesheet" href="/assets/magazine.css">', h)
         h=re.sub(r'<script src="[^"]+"[^>]*></script>', '',h)
-        return h+'<meta name="color-scheme" content="light"><script src="/assets/magazine.js" defer></script>'
+        return h+'<meta name="color-scheme" content="light"><script src="/assets/magazine.js" defer></script>'+analytics
     def shell(original, content, active):
         return '<!doctype html><html lang="en-US"><head>'+head(original)+'</head><body class="'+active+'"><a class="skip" href="#main">Skip to content</a>'+HEADER+'<main id="main">'+content+'</main>'+FOOTER.replace('<a href="/providers/digitalocean/">Providers</a>', ''.join('<a href="/providers/'+escape(p['id'])+'/">'+escape(p['name'])+'</a>' for p in cfg['providers'] if any(o['provider_id']==p['id'] for o in offers)))+'</body></html>'
     if offers:
