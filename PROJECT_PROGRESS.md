@@ -58,3 +58,12 @@ Google富媒体URL测试返回“出了点问题，如果此问题仍然存在�
 本地已完成：仅保留DO7个真价；失败源不再生成厂商页/首页入口/sitemap；VPS Cost Lens文案与/plans/路径；7方案各三项可复算成本情景和官方出处；补真实规格SVG与Product image；Offer availability OnlineOnly说明线上渠道而非库存。8测试及11页7方案验证通过。
 当前配置目标https://vpscostlens.com，生成HTML无pages.dev。代码尚未发布，线上仍旧版，富媒体新版复测尚未完成。Google旧页默认移动测试确认唯一严重项image缺失；不是没有结构化数据。
 精确接续：work/four-fixes/PROGRESS.md。勿因本地配置已有新域名而误报已上线。
+
+## 2026-11-12 最终完成（覆盖上方等待状态）
+正式站：https://vpscostlens.com/ 。用户已付款，Cloudflare Registrar注册Active，Pages域名Active且SSL enabled；没有代填付款/验证码/所有权确认。
+D2只保留DigitalOcean 7真价，Hetzner/OVH页面、首页入口、sitemap已移除。线上11页逐页canonical/OG指向新域名，零pages.dev引用；robots允许索引并指向新sitemap。
+D3 B定位VPS Cost Lens；7方案各有备份、团队流量超额、关机保留三项可复算情景，带官方URL/段落或表行定位与日期，清楚区分假设和账单。
+D4默认Google检查工具智能手机版URL测试：https://search.google.com/test/rich-results/result?id=upIf1Z9MFNaeV4GzsEaWcg 。09:41:17抓取样例/plans/digitalocean-s-1vcpu-1gb/，3有效项（产品摘要/商家信息/路径），无严重错误，有非严重提示。不保证Google实际展示，也未称7方案逐个跑Google。
+主发布PR#3合并60d1b197；额外PR#4修复缓存样式导致手机图片溢出，合并be6a583d。最终Actions43150875167 success，最新main35e5908d的Cloudflare检查success；线上数据时间2026-11-12T03:50:47+00:00。
+手机复核390px：innerWidth390、scrollWidth390、规格图358px；临时视口清除。所有本地8测试通过，build/verify11页7方案11sitemap。
+证据work/four-fixes/：rich-results-pass.jpg/txt、live-evidence.json、domain-active.txt、mobile-fixed.jpg/json、home-live-final.jpg、final-deployment.json、remote-source-check.json。Python普通请求仍403，Google实际抓取成功与浏览器成功不能推断所有客户端可达。

@@ -3,6 +3,7 @@
 # ::ROLE{读取I-Lang与真实数据生成静态页面；只输出当前、未过期、已配置厂商的方案}
 # ::BOUNDARY{never:编优惠幅度 截止日期 库存 评分 域名}
 import argparse
+import hashlib
 import html
 import json
 import shutil
@@ -46,6 +47,7 @@ def build(config_path=None, output=None):
     if out.exists(): shutil.rmtree(out)
     out.mkdir(parents=True)
     shutil.copytree(ROOT/'assets',out/'assets')
+    asset_version = hashlib.sha256((ROOT/'assets/style.css').read_bytes()+(ROOT/'assets/ui.js').read_bytes()).hexdigest()[:12]
     month = datetime.now(timezone.utc).strftime('%B %Y'); checked = data['fetched_at']
     statuses = {p['id']:p for p in data['providers']}
     pages = []
@@ -67,7 +69,7 @@ def build(config_path=None, output=None):
             graph.append({'@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'Home','item':url('/')},{'@type':'ListItem','position':2,'name':crumb,'item':url(path)}]})
         canonical = '<link rel="canonical" href="'+esc(url(path))+'">' if base else '<meta name="robots" content="noindex">'
         ld = json.dumps({'@context':'https://schema.org','@graph':graph},ensure_ascii=False).replace('<','\\u003c')
-        content = template('base.html',title=esc(title),description=esc(desc),brand=esc(cfg['brand']),body=body,
+        content = template('base.html',asset_version=asset_version,title=esc(title),description=esc(desc),brand=esc(cfg['brand']),body=body,
                            canonical=canonical,schema=ld,url=esc(url(path)),image=esc(url('/assets/og.png')),repository=esc(cfg['repository_url']))
         target = out / (path.strip('/')+'/index.html' if path!='/' else 'index.html')
         target.parent.mkdir(parents=True,exist_ok=True); target.write_text(content,encoding='utf-8')
@@ -113,7 +115,7 @@ def build(config_path=None, output=None):
     method = '<section class="page-head"><h1>How we check prices</h1><p>We monitor official public pricing pages. This index records base prices and specifications, with separately labelled cost scenarios.</p></section><section class="prose"><h2>Verification and freshness</h2><p>The pipeline checks robots.txt, fetches the configured public page and maps a named plan to its monthly price. Unknown markup, fetch errors and ambiguous prices produce no current priced plan. Prices older than '+str(cfg['max_age_hours'])+' hours are removed at the next build. An already deployed static site cannot update if the schedule stops; read the timestamp and verify checkout.</p><h2>Costs and eligibility</h2><p>Amounts are provider list prices, not guaranteed quotes. Billing caps, hourly usage, location, tax, IPv4, backups and transfer overages can affect your bill. No account-specific credits are included in the estimates.</p><h2>Affiliate disclosure</h2><p>No affiliate approval or income is claimed. Direct links are used until an approved tracking link is configured. Sponsored links are labelled where shown.</p><h2>Privacy</h2><p>This site sets no analytics cookies and contains no tracking scripts. Filtering and sorting run on your device without sending your input to a server. Hosting and outbound providers process requests under their own policies.</p><h2>Corrections and source code</h2><p>Review public data, fetch statuses or report a problem in the <a href="'+esc(cfg['repository_url'])+'">GitHub project</a>.</p></section>'
     page('/methodology/',f"Methodology, disclosure & privacy | {cfg['brand']}",'How we verify official VPS prices, handle stale data and disclose affiliate links.',method,crumb='Methodology')
     error_body = '<section class="page-head"><h1>This page could not be found.</h1><p>The address may have changed. Return to the current plan list to continue comparing.</p><a class="button primary" href="/">View current plans</a></section>'
-    (out/'404.html').write_text(template('base.html',title='Page not found | '+esc(cfg['brand']),description='Return to current verified VPS plans.',brand=esc(cfg['brand']),body=error_body,canonical='<meta name="robots" content="noindex">',schema='{"@context":"https://schema.org","@graph":[]}',url=esc(url('/404.html')),image=esc(url('/assets/og.png')),repository=esc(cfg['repository_url'])),encoding='utf-8')
+    (out/'404.html').write_text(template('base.html',asset_version=asset_version,title='Page not found | '+esc(cfg['brand']),description='Return to current verified VPS plans.',brand=esc(cfg['brand']),body=error_body,canonical='<meta name="robots" content="noindex">',schema='{"@context":"https://schema.org","@graph":[]}',url=esc(url('/404.html')),image=esc(url('/assets/og.png')),repository=esc(cfg['repository_url'])),encoding='utf-8')
     (out/'robots.txt').write_text('User-agent: *\n'+('Allow: /\nSitemap: '+base+'/sitemap.xml\n' if base else 'Disallow: /\n'),encoding='utf-8')
     entries = ''.join('<url><loc>'+xml_escape(url(path))+'</loc><lastmod>'+xml_escape(date)+'</lastmod></url>' for path,date in pages) if base else ''
     (out/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+entries+'</urlset>',encoding='utf-8')

@@ -1,14 +1,14 @@
 {
-  "fetched_at": "2026-11-12T01:18:26+00:00",
+  "fetched_at": "2026-11-12T03:50:47+00:00",
   "providers": [
     {
       "id": "digitalocean",
       "source_url": "https://www.digitalocean.com/pricing/droplets",
-      "checked_at": "2026-11-12T01:18:26+00:00",
+      "checked_at": "2026-11-12T03:50:47+00:00",
       "status": "ok",
       "robots_url": "https://www.digitalocean.com/robots.txt",
       "robots_sha256": "d146d8d0a5b3edacea7428716b502abab71ec0c0f466275940a63e418b044bdb",
-      "source_sha256": "0cc81321d43b05a8c212d3034c977a406ae9c7f49d1631cb913b403aaa269299",
+      "source_sha256": "8b9fdb2f75b53b75a32afab64a961ced0e50de4b2284deb472c7057de874fb6b",
       "offer_count": 7,
       "message": "Official price table parsed"
     }
@@ -24,7 +24,7 @@
       "period": "month",
       "offer_url": "https://www.digitalocean.com/pricing/droplets",
       "source_url": "https://www.digitalocean.com/pricing/droplets",
-      "fetched_at": "2026-11-12T01:18:26+00:00",
+      "fetched_at": "2026-11-12T03:50:47+00:00",
       "kind": "standard",
       "region": "US pricing; confirm availability at checkout",
       "specs": {
@@ -56,6 +56,10 @@
           {
             "url": "https://docs.digitalocean.com/platform/billing/taxes/",
             "location": "Tax Information by Country, introductory paragraph 1"
+          },
+          {
+            "url": "https://www.digitalocean.com/pricing/droplets",
+            "location": "Basic Regular pricing table, linked monthly price cells: official online purchase channel; not regional stock verification"
           }
         ]
       }
@@ -70,7 +74,7 @@
       "period": "month",
       "offer_url": "https://www.digitalocean.com/pricing/droplets",
       "source_url": "https://www.digitalocean.com/pricing/droplets",
-      "fetched_at": "2026-11-12T01:18:26+00:00",
+      "fetched_at": "2026-11-12T03:50:47+00:00",
       "kind": "standard",
       "region": "US pricing; confirm availability at checkout",
       "specs": {
@@ -102,6 +106,10 @@
           {
             "url": "https://docs.digitalocean.com/platform/billing/taxes/",
             "location": "Tax Information by Country, introductory paragraph 1"
+          },
+          {
+            "url": "https://www.digitalocean.com/pricing/droplets",
+            "location": "Basic Regular pricing table, linked monthly price cells: official online purchase channel; not regional stock verification"
           }
         ]
       }
@@ -116,7 +124,7 @@
       "period": "month",
       "offer_url": "https://www.digitalocean.com/pricing/droplets",
       "source_url": "https://www.digitalocean.com/pricing/droplets",
-      "fetched_at": "2026-11-12T01:18:26+00:00",
+      "fetched_at": "2026-11-12T03:50:47+00:00",
       "kind": "standard",
       "region": "US pricing; confirm availability at checkout",
       "specs": {
@@ -148,6 +156,10 @@
           {
             "url": "https://docs.digitalocean.com/platform/billing/taxes/",
             "location": "Tax Information by Country, introductory paragraph 1"
+          },
+          {
+            "url": "https://www.digitalocean.com/pricing/droplets",
+            "location": "Basic Regular pricing table, linked monthly price cells: official online purchase channel; not regional stock verification"
           }
         ]
       }
@@ -162,7 +174,7 @@
       "period": "month",
       "offer_url": "https://www.digitalocean.com/pricing/droplets",
       "source_url": "https://www.digitalocean.com/pricing/droplets",
-      "fetched_at": "2026-11-12T01:18:26+00:00",
+      "fetched_at": "2026-11-12T03:50:47+00:00",
       "kind": "standard",
       "region": "US pricing; confirm availability at checkout",
       "specs": {
@@ -194,6 +206,10 @@
           {
             "url": "https://docs.digitalocean.com/platform/billing/taxes/",
             "location": "Tax Information by Country, introductory paragraph 1"
+          },
+          {
+            "url": "https://www.digitalocean.com/pricing/droplets",
+            "location": "Basic Regular pricing table, linked monthly price cells: official online purchase channel; not regional stock verification"
           }
         ]
       }
@@ -208,7 +224,7 @@
       "period": "month",
       "offer_url": "https://www.digitalocean.com/pricing/droplets",
       "source_url": "https://www.digitalocean.com/pricing/droplets",
-      "fetched_at": "2026-11-12T01:18:26+00:00",
+      "fetched_at": "2026-11-12T03:50:47+00:00",
       "kind": "standard",
       "region": "US pricing; confirm availability at checkout",
       "specs": {
@@ -240,6 +256,10 @@
           {
             "url": "https://docs.digitalocean.com/platform/billing/taxes/",
             "location": "Tax Information by Country, introductory paragraph 1"
+          },
+          {
+            "url": "https://www.digitalocean.com/pricing/droplets",
+            "location": "Basic Regular pricing table, linked monthly price cells: official online purchase channel; not regional stock verification"
           }
         ]
       }
@@ -254,7 +274,7 @@
       "period": "month",
       "offer_url": "https://www.digitalocean.com/pricing/droplets",
       "source_url": "https://www.digitalocean.com/pricing/droplets",
-      "fetched_at": "2026-11-12T01:18:26+00:00",
+      "fetched_at": "2026-11-12T03:50:47+00:00",
       "kind": "standard",
       "region": "US pricing; confirm availability at checkout",
       "specs": {
@@ -286,6 +306,10 @@
           {
             "url": "https://docs.digitalocean.com/platform/billing/taxes/",
             "location": "Tax Information by Country, introductory paragraph 1"
+          },
+          {
+            "url": "https://www.digitalocean.com/pricing/droplets",
+            "location": "Basic Regular pricing table, linked monthly price cells: official online purchase channel; not regional stock verification"
           }
         ]
       }
@@ -300,7 +324,7 @@
       "period": "month",
       "offer_url": "https://www.digitalocean.com/pricing/droplets",
       "source_url": "https://www.digitalocean.com/pricing/droplets",
-      "fetched_at": "2026-11-12T01:18:26+00:00",
+      "fetched_at": "2026-11-12T03:50:47+00:00",
       "kind": "standard",
       "region": "US pricing; confirm availability at checkout",
       "specs": {
@@ -332,6 +356,10 @@
           {
             "url": "https://docs.digitalocean.com/platform/billing/taxes/",
             "location": "Tax Information by Country, introductory paragraph 1"
+          },
+          {
+            "url": "https://www.digitalocean.com/pricing/droplets",
+            "location": "Basic Regular pricing table, linked monthly price cells: official online purchase channel; not regional stock verification"
           }
         ]
       }

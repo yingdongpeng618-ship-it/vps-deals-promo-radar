@@ -28,7 +28,7 @@ def verify():
         for href in re.findall(r'(?:href|src)="([^"]+)"',s):
             href=unescape(href)
             if href.startswith('/') and not href.startswith('//'):
-                target=root/href.lstrip('/').split('#')[0]
+                target=root/urlsplit(href).path.lstrip('/')
                 assert target.is_file() or (target/'index.html').is_file(),(path,href)
     print(json.dumps({'verified_pages':len(pages),'verified_deals':len(offers),'sitemap_urls':len(urls),'canonical_mode':'production' if cfg['base_url'] else 'local-noindex'}))
 if __name__=='__main__': verify()
