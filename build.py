@@ -13,6 +13,7 @@ from string import Template
 from decimal import Decimal, ROUND_HALF_UP
 from xml.sax.saxutils import escape as xml_escape
 from config import ROOT, load_config
+from calm_preview import apply_preview
 from vultr_article import publish_vultr_article
 from hostinger_article import publish_hostinger_article
 from azure_article import publish_azure_article
@@ -126,6 +127,7 @@ def build(config_path=None, output=None):
     entries = ''.join('<url><loc>'+xml_escape(url(path))+'</loc><lastmod>'+xml_escape(date)+'</lastmod></url>' for path,date in pages) if base else ''
     (out/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+entries+'</urlset>',encoding='utf-8')
     (out/'_headers').write_text('/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: DENY\n  Content-Security-Policy: default-src \'self\'; script-src \'self\' \'unsafe-inline\'; style-src \'self\'; img-src \'self\' data:; frame-ancestors \'none\'\n',encoding='utf-8')
+    apply_preview(out, cfg, data, offers)
     summary = {'pages':len(pages),'deals':len(offers),'providers':len(cfg['providers']),'base_url':base,'data_fetched_at':checked}
     (ROOT/'data/build-report.json').write_text(json.dumps(summary,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(summary)); return summary
