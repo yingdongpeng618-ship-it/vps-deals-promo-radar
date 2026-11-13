@@ -12,6 +12,15 @@ from config import ROOT, load_config
 
 def verify():
     cfg=load_config(); root=ROOT/'site'; data=json.loads((ROOT/'data/offers.json').read_text(encoding='utf-8'))
+    measurement_id=cfg.get('analytics',{}).get('measurement_id','')
+    if measurement_id:
+        for html in root.rglob('*.html'):
+            source=html.read_text(encoding='utf-8')
+            assert source.count('https://www.googletagmanager.com/gtag/js?id='+measurement_id)==1,html
+            assert source.count("gtag('config', '"+measurement_id+"')")==1,html
+        headers=(root/'_headers').read_text(encoding='utf-8')
+        assert 'https://www.googletagmanager.com' in headers
+        assert 'https://*.google-analytics.com' in headers
     offers=fresh_offers(cfg,data); pages=list(root.rglob('index.html'))
     sitemap=ET.parse(root/'sitemap.xml'); ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}
     urls=[x.text for x in sitemap.findall('.//s:loc',ns)]
