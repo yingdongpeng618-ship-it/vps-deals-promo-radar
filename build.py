@@ -17,6 +17,7 @@ from vultr_article import publish_vultr_article
 from hostinger_article import publish_hostinger_article
 from azure_article import publish_azure_article
 from digitalocean_article import publish_digitalocean_article
+from linode_article import publish_linode_articles
 
 def esc(x): return html.escape(str(x), quote=True)
 def cost_analysis(o):
@@ -125,6 +126,7 @@ def build(config_path=None, output=None):
     pages.append(publish_hostinger_article(out))
     pages.append(publish_azure_article(out))
     pages.append(publish_digitalocean_article(out,cfg))
+    pages.extend(publish_linode_articles(out,cfg))
     entries = ''.join('<url><loc>'+xml_escape(url(path))+'</loc><lastmod>'+xml_escape(date)+'</lastmod></url>' for path,date in pages) if base else ''
     (out/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+entries+'</urlset>',encoding='utf-8')
     (out/'_headers').write_text('/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: DENY\n  Content-Security-Policy: default-src \'self\'; script-src \'self\' \'unsafe-inline\' https://www.googletagmanager.com; connect-src \'self\' https://www.googletagmanager.com https://*.google-analytics.com https://analytics.google.com; style-src \'self\'; img-src \'self\' data: https://*.google-analytics.com https://www.googletagmanager.com; frame-ancestors \'none\'\n',encoding='utf-8')
