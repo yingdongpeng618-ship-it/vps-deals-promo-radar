@@ -76,6 +76,8 @@ GUIDES = [('vultr','Vultr'),('hostinger-vps','Hostinger VPS'),('azure-virtual-se
 def publish_hetzner(output, cfg):
     return publish_document(output,cfg,'/pricing/hetzner/','Hetzner pricing: CPX €5.49–€238.49/month','Official Hetzner Cloud CPX hourly and regional quotes, traffic allowances, IPv4, backups and retained-resource calculations.',body(),CHECKED)
 
-def publish_pricing_index(output,cfg):
+def publish_pricing_index(output,cfg,extra=None,updated=None):
     content='<section class="page-head"><h1>Provider pricing guides</h1><p>Choose a provider to check the official source, the observation date and the billing details behind its headline rate.</p></section><section class="prose"><ul>'+''.join('<li><a href="/pricing/'+slug+'/">'+name+' pricing</a></li>' for slug,name in GUIDES)+'</ul><p>Each guide keeps its own source-check date. This directory was updated when the Hetzner guide was added.</p><p><a href="/">Home</a> · <a href="/compare/">Compare published plans</a></p></section>'
-    return publish_document(output,cfg,'/pricing/','Provider pricing guides','Official-source cloud pricing guides and worked billing checks.',content,CHECKED)
+    if extra:
+        content=content.replace('</ul>', '<li><a href="'+extra[0]+'">'+extra[1]+'</a></li></ul>', 1).replace('This directory was updated when the Hetzner guide was added.', 'This directory was updated when the Oracle Cloud free tier guide was added.')
+    return publish_document(output,cfg,'/pricing/','Provider pricing guides','Official-source cloud pricing guides and worked billing checks.',content,updated or CHECKED)
