@@ -1,14 +1,14 @@
 {
-  "fetched_at": "2026-11-26T19:29:01+00:00",
+  "fetched_at": "2026-11-27T01:49:56+00:00",
   "providers": [
     {
       "id": "digitalocean",
       "source_url": "https://www.digitalocean.com/pricing/droplets",
-      "checked_at": "2026-11-26T19:29:01+00:00",
+      "checked_at": "2026-11-27T01:49:56+00:00",
       "status": "ok",
       "robots_url": "https://www.digitalocean.com/robots.txt",
       "robots_sha256": "d146d8d0a5b3edacea7428716b502abab71ec0c0f466275940a63e418b044bdb",
-      "source_sha256": "a2d817e081336b9c71d54d6eb10fbf943a1e4e2747cb08f372b754460b7c0c01",
+      "source_sha256": "250580a0306b7e4b1bc9961c5a86687313e3cd256e1bd427c1551305c6cf5aa8",
       "offer_count": 7,
       "message": "Official price table parsed"
     }
@@ -24,7 +24,7 @@
       "period": "month",
       "offer_url": "https://www.digitalocean.com/pricing/droplets",
       "source_url": "https://www.digitalocean.com/pricing/droplets",
-      "fetched_at": "2026-11-26T19:29:01+00:00",
+      "fetched_at": "2026-11-27T01:49:56+00:00",
       "kind": "standard",
       "region": "US pricing; confirm availability at checkout",
       "specs": {
@@ -74,7 +74,7 @@
       "period": "month",
       "offer_url": "https://www.digitalocean.com/pricing/droplets",
       "source_url": "https://www.digitalocean.com/pricing/droplets",
-      "fetched_at": "2026-11-26T19:29:01+00:00",
+      "fetched_at": "2026-11-27T01:49:56+00:00",
       "kind": "standard",
       "region": "US pricing; confirm availability at checkout",
       "specs": {
@@ -124,7 +124,7 @@
       "period": "month",
       "offer_url": "https://www.digitalocean.com/pricing/droplets",
       "source_url": "https://www.digitalocean.com/pricing/droplets",
-      "fetched_at": "2026-11-26T19:29:01+00:00",
+      "fetched_at": "2026-11-27T01:49:56+00:00",
       "kind": "standard",
       "region": "US pricing; confirm availability at checkout",
       "specs": {
@@ -174,7 +174,7 @@
       "period": "month",
       "offer_url": "https://www.digitalocean.com/pricing/droplets",
       "source_url": "https://www.digitalocean.com/pricing/droplets",
-      "fetched_at": "2026-11-26T19:29:01+00:00",
+      "fetched_at": "2026-11-27T01:49:56+00:00",
       "kind": "standard",
       "region": "US pricing; confirm availability at checkout",
       "specs": {
@@ -224,7 +224,7 @@
       "period": "month",
       "offer_url": "https://www.digitalocean.com/pricing/droplets",
       "source_url": "https://www.digitalocean.com/pricing/droplets",
-      "fetched_at": "2026-11-26T19:29:01+00:00",
+      "fetched_at": "2026-11-27T01:49:56+00:00",
       "kind": "standard",
       "region": "US pricing; confirm availability at checkout",
       "specs": {
@@ -274,7 +274,7 @@
       "period": "month",
       "offer_url": "https://www.digitalocean.com/pricing/droplets",
       "source_url": "https://www.digitalocean.com/pricing/droplets",
-      "fetched_at": "2026-11-26T19:29:01+00:00",
+      "fetched_at": "2026-11-27T01:49:56+00:00",
       "kind": "standard",
       "region": "US pricing; confirm availability at checkout",
       "specs": {
@@ -324,7 +324,7 @@
       "period": "month",
       "offer_url": "https://www.digitalocean.com/pricing/droplets",
       "source_url": "https://www.digitalocean.com/pricing/droplets",
-      "fetched_at": "2026-11-26T19:29:01+00:00",
+      "fetched_at": "2026-11-27T01:49:56+00:00",
       "kind": "standard",
       "region": "US pricing; confirm availability at checkout",
       "specs": {
